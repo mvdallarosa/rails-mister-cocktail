@@ -1,0 +1,18 @@
+<div class="card mb-3 mx-auto" style="max-width: 1000px;">
+  <div class="row no-gutters ">
+    <div class="col-md-4">
+      <img src="<%= @images.sample %>" style="max-widht: 300px; height:auto"class="card-img" alt="...">
+    </div>
+    <div class="col-md-8 d-flex">
+      <div class="card-body">
+        <h1 class="card-title font-weight-lighter"><%= @cocktail.name.upcase %></h1>
+        <ul class="list-group list-group-flush">
+        <% @cocktail.doses.each do |dose| %>
+          <li class="list-group-item"><%= dose.ingredient.name %> - <%= dose.description %> - <%= link_to "Remove", dose_path(dose), method: :delete, class: 'text-info' %></li>
+        <% end %>
+        </ul>
+        <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-info align-bottom' %>
+      </div>
+    </div>
+  </div>
+</div>

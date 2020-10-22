@@ -1,0 +1,13 @@
+<div class="row row-cols-1 row-cols-md-3">
+<% @cocktails.each do |cocktail| %>
+  <div class="col mb-4">
+    <div class="card" style="width: 18rem;">
+      <img src="<%= @images.sample %>" class="card-img-top" style="max-height: 400px; width:auto" alt="...">
+      <div class="card-body">
+        <h4 class="card-title font-weight-lighter"><%= cocktail.name.upcase %></h4>
+        <%= link_to "Discover", cocktail_path(cocktail), class: "btn btn-dark" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
