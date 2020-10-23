@@ -12,11 +12,11 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-light bg-dark text-white mb-4">
+    <nav class="navbar navbar-light bg-dark text-white fixed-top mb-5">
       <a href="/" class="navbar-brand text-white">CoksWOW</a>
       <%= link_to "Create your own", new_cocktail_path, class: "font-weight-lighter btn btn-outline-info" %>
     </nav>
-    <div class="container">
+    <div>
       <%= yield %>
     </div>
   </body>

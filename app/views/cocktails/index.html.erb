@@ -1,13 +1,14 @@
-<div class="row row-cols-1 row-cols-md-3">
-<% @cocktails.each do |cocktail| %>
-  <div class="col mb-4">
-    <div class="card" style="width: 18rem;">
-      <img src="<%= @images.sample %>" class="card-img-top" style="max-height: 400px; width:auto" alt="...">
-      <div class="card-body">
-        <h4 class="card-title font-weight-lighter"><%= cocktail.name.upcase %></h4>
-        <%= link_to "Discover", cocktail_path(cocktail), class: "btn btn-dark" %>
-      </div>
-    </div>
-  </div>
-<% end %>
+<div class="cover" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1513614825922-8fdb7f6ee617?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2043&q=80)">
+  CoksWOW
 </div>
+
+<div class="m-4">
+  <div id="cocktail" class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= @images.sample %>)">
+        <%= link_to "#{cocktail.name.upcase}", cocktail_path(cocktail), class: "btn btn-outline-light border-circle" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
