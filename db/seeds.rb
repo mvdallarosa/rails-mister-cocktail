@@ -9,17 +9,17 @@ require 'json'
 require 'open-uri'
 require 'faker'
 
-# Ingredient.destroy_all
-# Cocktail.destroy_all
+Cocktail.destroy_all
+Ingredient.destroy_all
 
-# url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-# list_serialized = open(url).read
-# list = JSON.parse(list_serialized)
+url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+list_serialized = open(url).read
+list = JSON.parse(list_serialized)
 
-# puts 'Creating 100 ingredients'
-# list['drinks'].each do |hash|
-#   Ingredient.create(name: "#{hash["strIngredient1"]}")
-# end
+puts 'Creating 100 ingredients'
+list['drinks'].each do |hash|
+  Ingredient.create(name: "#{hash["strIngredient1"]}")
+end
 
 puts 'Creating 12 cocktails'
 array = ['love', 'rainbows', 'flowers', 'dreams', 'sunbeams', 'peace', 'vibes', 'spices']
