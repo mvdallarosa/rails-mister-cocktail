@@ -1,21 +1,26 @@
-<div class="container" style="margin-top: 100px;">
+<div style="margin-top: 100px; color: white">
   <div class="card mb-3 mx-auto border-0 rounded-lg" style="max-width: 1000px;">
     <div class="row no-gutters ">
-      <div class="col-md-4">
+      <div class="col-md-4 bg-dark">
         <%= cl_image_tag(@cocktail.photo.key,
       width: 300, height: 300, crop: :fill)  %>
       </div>
       <div class="col-md-8 d-flex">
-        <div class="card-body">
+        <div class="card-body bg-dark">
           <h1 class="card-title font-weight-lighter"><%= @cocktail.name.upcase %></h1>
-          <ul class="list-group list-group-flush">
+          <ul class="list-group list-group-flush bg-dark">
           <% @cocktail.doses.each do |dose| %>
-            <li class="list-group-item"><%= dose.ingredient.name %> - <%= dose.description %> - <%= link_to "Remove", dose_path(dose), method: :delete, class: 'text-info' %></li>
+            <li class="list-group-item  border-light bg-dark"><%= dose.ingredient.name %> - <%= dose.description %> - <%= link_to "Remove", dose_path(dose), method: :delete, class: 'text-info' %></li>
           <% end %>
           </ul>
           <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: 'btn btn-info align-bottom' %>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="banner-show mt-5">
+  <div class="container">
   </div>
 </div>
