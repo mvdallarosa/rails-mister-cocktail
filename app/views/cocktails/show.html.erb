@@ -2,7 +2,8 @@
   <div class="card mb-3 mx-auto border-0 rounded-lg" style="max-width: 1000px;">
     <div class="row no-gutters ">
       <div class="col-md-4">
-        <img src="<%= @images.sample %>" style="max-widht: 300px; height:auto"class="card-img" alt="...">
+        <%= cl_image_tag(@cocktail.photo.key,
+      width: 400, height: 300, crop: :fill)  %>
       </div>
       <div class="col-md-8 d-flex">
         <div class="card-body">

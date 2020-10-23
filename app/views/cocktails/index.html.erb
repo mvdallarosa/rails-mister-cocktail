@@ -5,7 +5,7 @@
 <div class="m-4">
   <div id="cocktail" class="cards">
     <% @cocktails.each do |cocktail| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= @images.sample %>)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path cocktail.photo.key %>)">
         <%= link_to "#{cocktail.name.upcase}", cocktail_path(cocktail), class: "btn btn-outline-light border-circle" %>
       </div>
     <% end %>
