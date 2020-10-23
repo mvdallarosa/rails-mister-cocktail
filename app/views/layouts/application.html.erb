@@ -4,6 +4,7 @@
     <title>RailsMisterCocktail</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,10 +12,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <nav class="navbar navbar-light bg-dark text-white fixed-top mb-5">
-      <a href="/" class="navbar-brand text-white">CoksWOW</a>
-      <%= link_to "Create your own", new_cocktail_path, class: "font-weight-lighter btn btn-outline-info" %>
+  <body class="bg-dark">
+    <nav class="navbar-lewagon navbar text-dark fixed-top mb-5">
+      <a href="/" class="navbar-brand text-dark"><i class="fas fa-cocktail" style="font-size: 30px; color:#FFC659;"></i>
+      <%= link_to "Create your own", new_cocktail_path, class: "font-weight-bold btn btn-outline-info" %>
     </nav>
     <div>
       <%= yield %>
