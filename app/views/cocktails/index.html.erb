@@ -7,7 +7,7 @@
 <div class="m-4">
   <div id="cocktail" class="cards">
     <% @cocktails.each do |cocktail| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(255,198,89,0.2),rgba(255,198,89,0.2)), url(<%= cl_image_path cocktail.photo.key %>)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(255,198,89,0.2),rgba(255,198,89,0.2)), url(<%= cocktail.photo.key ? cl_image_path cocktail.photo.key : 'https://images.unsplash.com/photo-1570598912132-0ba1dc952b7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80'%>)">
         <%= link_to "#{cocktail.name.upcase}", cocktail_path(cocktail), class: "btn btn-dark border-circle" %>
       </div>
     <% end %>
